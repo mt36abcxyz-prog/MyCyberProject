@@ -1,0 +1,40 @@
+CREATE LOGIN User1 WITH PASSWORD = 'P@ssw0rd123';    111 إنشاء حساب دخول جديد
+
+ALTER LOGIN User1 WITH PASSWORD = 'NewPassword';     تغيير كلمة المرور للحساب
+
+ALTER LOGIN User1 DISABLE;       تعطيل الحساب مؤقتاً
+
+ALTER LOGIN User1 ENABLE;         إعادة تفعيل الحساب
+
+USE YourDatabaseName;           222 الدخول لقاعدة بيانات معينة
+
+CREATE USER User1 FOR LOGIN User1;     333 إنشاء مستخدم داخل قاعدة البيانات
+
+GRANT SELECT ON dbo.Table1 TO User1;      444 إعطاء صلاحية القراءة
+
+REVOKE SELECT ON dbo.Table1 FROM User1;    سحب صلاحية القراءة
+
+SELECT SERVERPROPERTY('IsIntegratedSecurityOnly');     معرفة نوع المصادقة
+
+SELECT name, is_disabled FROM sys.sql_logins;     عرض الحسابات وحالتها
+
+SELECT * FROM sys.sql_logins WHERE name = 'User1';     عرض تفاصيل أمن الحساب
+
+DROP LOGIN User1;    حذف الحساب نهائياً
+
+
+
+
+CREATE LOGIN: Establish server-level identity.  
+
+USE [Database]: Select the target database.  
+
+CREATE USER: Establish database-level identity.  
+
+GRANT: Assign specific functional permissions.
+
+
+CREATE LOGIN User1 WITH PASSWORD = 'P@ssw0rd123';  1
+USE YourDatabaseName;    2
+CREATE USER User1 FOR LOGIN User1;  3
+GRANT SELECT ON dbo.Table1 TO User1;   4
