@@ -1,0 +1,25 @@
+
+
+index.html
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Programming Lab</title>
+</head>
+<body>
+    <h1 id="title">Section 1: Data Display</h1>
+    <button onclick="processData()">Execute</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js
+
+
+function processData() {
+    document.getElementById("title").innerHTML = "Data Processed Successfully";
+}
+
